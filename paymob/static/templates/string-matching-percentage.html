@@ -1,0 +1,22 @@
+<style>
+    table, th, td {
+      border: 1px solid;
+    }
+    </style>
+
+<table summary="no_orderDate">
+    <tr><th>Key</th><th>Value</th><th>Matching Percentage</th>
+        {% for value,similarity in diction.items %}
+            <tr>
+                <td>
+                    {{ key }}
+                </td>
+                <td>
+                    {{ value }}
+                </td>
+                <td>
+                    {{ similarity }}
+                </td>
+            </tr>
+        {% endfor %}
+    </table>

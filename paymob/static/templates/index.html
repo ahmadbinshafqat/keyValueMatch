@@ -1,0 +1,27 @@
+<link href="../static/css/select2.min.css" rel="stylesheet" />
+<script src="../static/js/jquery.min.js" type="text/javascript"></script>
+
+<script src="../static/js/select2.min.js"></script>
+
+<form action="/string-match-percentage" method="post">
+  {% csrf_token %}
+  <div class="form-group">
+    
+    <label for="key" class="col-sm-2 control-label">Select Key</label>
+    <div class="col-sm-10">    
+    <select name="key" class="selectable-dd">
+        {% for key in keys %}
+            <option value="{{ key }}">{{ key }}</option>
+        {% endfor %}
+      </select>    
+    </div>
+    <input type="submit" value="Search">
+  </div>
+  
+
+</form>
+<script>
+    $(document).ready(function () {
+        $('.selectable-dd').select2();
+    });
+</script>
